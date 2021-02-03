@@ -14,8 +14,9 @@
             v-for="item in nav_items"
             :key="item.id"
             :to="item.link"
-            >{{ item.title }}</b-nav-item
-          >
+            >
+            <span v-html="item.title"></span>
+          </b-nav-item>
           <b-nav-item v-for="item in socials" :key="item.id" :href="item.link">
             <b-icon class="nav_icon" :icon="item.icon"></b-icon>
           </b-nav-item>
@@ -39,7 +40,7 @@ export default {
       nav_items: [
         { link: "/", title: "Home" },
         // { link: "about", title: "About" },
-        { link: "resume", title: "Resume" },
+        { link: "resume", title: "Resum&eacute;" },
         { link: "contact", title: "Contact" }
       ],
       socials: [
@@ -70,7 +71,7 @@ export default {
 .navbar-nav .nav-link {
   color: rgba(255,255,255,0.85);
   text-shadow: 0px 1px 2px rgba(0,0,0,0.7);
-  box-shadow: 0px 1px 2px rgba(0,0,0,0.7));
+  /* box-shadow: 0px 1px 2px rgba(0,0,0,0.7); */
 }
 .nav_icon {
     filter: drop-shadow( 1px 1px 2px rgba(0, 0, 0, 0.5));
